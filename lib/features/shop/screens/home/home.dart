@@ -1,6 +1,7 @@
 import 'package:clothes_app/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:clothes_app/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes_app/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:clothes_app/common/widgets/texts/section_heading.dart';
 import 'package:clothes_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:clothes_app/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:clothes_app/features/shop/screens/home/widgets/home_popular_category.dart';
@@ -44,6 +45,9 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: GSize.spaceBtwSections),
+
+                  SectionHeading(title: 'Popular Products', showActionButton: true, buttonTitle: 'view all', onPressed: (){},),
+                  const SizedBox(height: GSize.spaceBtwItems),
                   GGridLayout(itemBuilder: (_, index) => GProductCardVertical(), itemCount: 8,),
                 ],
               ),

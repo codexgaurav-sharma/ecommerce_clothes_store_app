@@ -1,5 +1,6 @@
 import 'package:clothes_app/utils/constants/colors.dart';
 import 'package:clothes_app/utils/constants/sizes.dart';
+import 'package:clothes_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 
 class GRoundedImage extends StatelessWidget {
@@ -9,7 +10,7 @@ class GRoundedImage extends StatelessWidget {
   final BoxFit? fit;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
   final VoidCallback? onPressed;
@@ -24,13 +25,14 @@ class GRoundedImage extends StatelessWidget {
     this.padding,
     this.isNetworkImage = false,
     this.onPressed,
-    this.backgroundColor = GColors.light,
+    this.backgroundColor,
     this.borderRadius = GSize.md,
     required this.imageUrl,
   });
 
   @override
   Widget build(BuildContext context) {
+    final dark = GHelperFunction.isDarkMode(context);
     return GestureDetector(
       onTap: onPressed,
       child: Container(
@@ -39,7 +41,11 @@ class GRoundedImage extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           border: border,
-          color: backgroundColor,
+          color: backgroundColor != null
+              ? backgroundColor!
+              : dark
+              ? GColors.dark
+              : GColors.light,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: ClipRRect(

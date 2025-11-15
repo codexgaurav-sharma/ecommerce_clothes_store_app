@@ -2,6 +2,7 @@ import 'package:clothes_app/common/styles/shadows.dart';
 import 'package:clothes_app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:clothes_app/common/widgets/icons/g_circular_icons.dart';
 import 'package:clothes_app/common/widgets/images/g_rounded_images.dart';
+import 'package:clothes_app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
 import 'package:clothes_app/common/widgets/texts/product_price_text.dart';
 import 'package:clothes_app/common/widgets/texts/product_title_text.dart';
 import 'package:clothes_app/utils/constants/colors.dart';
@@ -75,48 +76,35 @@ class GProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   const SizedBox(height: GSize.spaceBtwItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        "Nike",
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: GSize.xs),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: GColors.primary,
-                        size: GSize.iconXs,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ProductPriceText(price: "35.4", isLarge: true),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: GColors.primary,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(GSize.cardRadiusMd),
-                            bottomRight: Radius.circular(
-                              GSize.productImageRadius,
-                            ),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: GSize.iconLg * 1.2,
-                          height: GSize.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(Iconsax.add, color: GColors.white),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  BrandTitleTextWithVerifyIcon(title: 'Nike'),
                 ],
               ),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: GSize.sm),
+                  child: ProductPriceText(price: "35.4", isLarge: true),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: GColors.primary,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(GSize.cardRadiusMd),
+                      bottomRight: Radius.circular(GSize.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: GSize.iconLg * 1.2,
+                    height: GSize.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(Iconsax.add, color: GColors.white),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -124,3 +112,4 @@ class GProductCardVertical extends StatelessWidget {
     );
   }
 }
+

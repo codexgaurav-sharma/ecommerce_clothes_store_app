@@ -10,9 +10,11 @@ class GSearchContainer extends StatelessWidget {
   final IconData? icon;
   final String text;
   final bool showBackground, showBorder;
+  final EdgeInsetsGeometry padding;
   const GSearchContainer({
     super.key,
     required this.text,
+    this.padding = const EdgeInsets.symmetric(horizontal: GSize.defaultSpace),
     this.icon = Iconsax.search_normal,
     this.showBackground = true,
     this.showBorder = true,
@@ -22,7 +24,7 @@ class GSearchContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = GHelperFunction.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: GSize.defaultSpace),
+      padding: padding,
       child: Container(
         width: GDeviceUtility.getScreenWidth(context),
         padding: const EdgeInsets.all(GSize.md),

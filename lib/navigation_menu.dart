@@ -1,4 +1,5 @@
 import 'package:clothes_app/features/shop/screens/home/home.dart';
+import 'package:clothes_app/features/shop/screens/store/store.dart';
 import 'package:clothes_app/utils/constants/colors.dart';
 import 'package:clothes_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(color: Colors.deepOrange),
+    const StoreScreen(),
     Container(color: Colors.deepPurple),
     Container(color: Colors.blueAccent),
   ];

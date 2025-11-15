@@ -30,4 +30,7 @@ class GImages {
 
 
   static const String productImage1 = "assets/images/products/product-1.png";
+  
+  static const String brandImage1 = "assets/images/brands/brand-1.png";
+  static const String brandImage2 = "assets/images/brands/brand-2.png";
 }
