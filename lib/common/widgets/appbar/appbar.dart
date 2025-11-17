@@ -1,5 +1,7 @@
+import 'package:clothes_app/utils/constants/colors.dart';
 import 'package:clothes_app/utils/constants/sizes.dart';
 import 'package:clothes_app/utils/devices/device_utility.dart';
+import 'package:clothes_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -22,6 +24,7 @@ class GAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = GHelperFunction.isDarkMode(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: GSize.md),
       child: AppBar(
@@ -30,6 +33,7 @@ class GAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? IconButton(
                 onPressed: () => Get.back(),
                 icon: const Icon(Iconsax.arrow_left),
+                color: dark ? GColors.white : GColors.black,
               )
             : leadingIcon != null
             ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon))

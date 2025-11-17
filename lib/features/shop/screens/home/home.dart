@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: GSize.spaceBtwSections),
 
                   const CategoryWidget(),
+                  const SizedBox(height: GSize.spaceBtwSections),
                 ],
               ),
             ),

@@ -5,11 +5,13 @@ import 'package:clothes_app/common/widgets/images/g_rounded_images.dart';
 import 'package:clothes_app/common/widgets/texts/brand_title_text_with_verify_icon.dart';
 import 'package:clothes_app/common/widgets/texts/product_price_text.dart';
 import 'package:clothes_app/common/widgets/texts/product_title_text.dart';
+import 'package:clothes_app/features/shop/screens/product_details/product_details.dart';
 import 'package:clothes_app/utils/constants/colors.dart';
 import 'package:clothes_app/utils/constants/image_strings.dart';
 import 'package:clothes_app/utils/constants/sizes.dart';
 import 'package:clothes_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class GProductCardVertical extends StatelessWidget {
@@ -19,7 +21,7 @@ class GProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = GHelperFunction.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => ProductDetails()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -37,6 +39,7 @@ class GProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   GRoundedImage(
+                    width: double.infinity,
                     imageUrl: GImages.productImage1,
                     applyImageRadius: true,
                   ),
@@ -112,4 +115,3 @@ class GProductCardVertical extends StatelessWidget {
     );
   }
 }
-

@@ -36,7 +36,7 @@ class GRoundedImage extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: double.infinity,
+        width: width,
         height: height,
         padding: padding,
         decoration: BoxDecoration(

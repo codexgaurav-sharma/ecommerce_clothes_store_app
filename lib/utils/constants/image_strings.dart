@@ -20,7 +20,7 @@ class GImages {
 
   static const String categoryGirlSuit =
       'assets/images/categories/girls_suit.png';
-  
+
   static const String categoryMensShirt =
       'assets/images/categories/mens-shirt.png';
 
@@ -28,9 +28,20 @@ class GImages {
   static const String homeBannerImage2 = "assets/images/banner/banner-2.jpg";
   static const String homeBannerImage3 = "assets/images/banner/banner-3.jpg";
 
-
   static const String productImage1 = "assets/images/products/product-1.png";
+  static const String productImage2 = "assets/images/products/product-2.png";
+  static const String productImage3 = "assets/images/products/product-3.png";
+  static const String productImage4 = "assets/images/products/product-4.png";
   
+  static const String productShoesImage1 = "assets/images/products/shoes-1.png";
+  static const String productShoesImage2 = "assets/images/products/shoes-2.png";
+  static const String productShoesImage3 = "assets/images/products/shoes-3.png";
+  static const String productShoesImage4 = "assets/images/products/shoes-4.png";
+
   static const String brandImage1 = "assets/images/brands/brand-1.png";
   static const String brandImage2 = "assets/images/brands/brand-2.png";
+
+  static const String userImage1 = "assets/images/user/user-sakuna.jpeg";
+
+  static const String userImage = "assets/images/user/user.png";
 }

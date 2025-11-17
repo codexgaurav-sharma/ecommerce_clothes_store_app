@@ -10,8 +10,17 @@ class GCircularImage extends StatelessWidget {
   final Color? overlayColor, backgroundColor;
   final double width, height, padding;
 
-  const GCircularImage({super.key, this.fit = BoxFit.cover, required this.image, this.isNetworkImage = false, this.overlayColor, this.backgroundColor, this.width = 56, this.height = 56, this.padding = GSize.sm});
-
+  const GCircularImage({
+    super.key,
+    this.fit = BoxFit.cover,
+    required this.image,
+    this.isNetworkImage = false,
+    this.overlayColor,
+    this.backgroundColor,
+    this.width = 56,
+    this.height = 56,
+    this.padding = GSize.sm,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +31,17 @@ class GCircularImage extends StatelessWidget {
       width: width,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: dark ? GColors.black : GColors.white,
+        color: backgroundColor != null ? backgroundColor! : dark ? GColors.black : GColors.white,
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Image(
-        image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-        color: overlayColor != null ? overlayColor! : dark ? GColors.white : GColors.black,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Image(
+          image: isNetworkImage
+              ? NetworkImage(image)
+              : AssetImage(image) as ImageProvider,
+          color: overlayColor != null ? overlayColor! : dark ? GColors.white : GColors.black,
+        ),
       ),
     );
   }
